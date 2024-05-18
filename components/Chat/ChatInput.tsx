@@ -13,8 +13,8 @@ export const ChatInput: FC<Props> = ({ onSend }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
-    if (value.length > 4000) {
-      alert("Message limit is 4000 characters");
+    if (value.length > 2000) {
+      alert("총 2000자를 넘었어요. 메시지는 2000자로 제한됩니다");
       return;
     }
 
@@ -23,7 +23,7 @@ export const ChatInput: FC<Props> = ({ onSend }) => {
 
   const handleSend = () => {
     if (!content) {
-      alert("Please enter a message");
+      alert("메시지를 입력해주세요.");
       return;
     }
     onSend({ role: "user", content });
